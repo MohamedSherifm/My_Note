@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+
+    tools:context=".updateNote.UpdateNoteFragment">
+
+    <data>
+
+        <variable
+            name="updateNoteViewModel"
+            type="com.example.mynote.updateNote.UpdateNoteViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#364547">
+
+
+        <EditText
+            android:id="@+id/update_note_title_id"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:ems="10"
+            android:textColor="@color/title"
+            android:hint="Note Title"
+            android:inputType="textPersonName"
+            android:textAlignment="center"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.138" />
+
+        <EditText
+            android:id="@+id/update_note_description_id"
+            android:layout_width="0dp"
+            android:layout_height="139dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="45dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="16dp"
+            android:ems="10"
+            android:hint="Note Description"
+            android:inputType="textMultiLine|textPersonName"
+            android:lineSpacingExtra="8sp"
+            android:textAlignment="viewStart"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/update_note_title_id"
+            app:layout_constraintHorizontal_bias="0.6"
+            app:layout_constraintStart_toStartOf="@+id/update_note_title_id"
+            app:layout_constraintTop_toBottomOf="@+id/update_note_title_id"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <Button
+            android:id="@+id/update_btn"
+            style="@style/buttons_style"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp"
+            android:text="Update Note"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/update_note_description_id"
+            app:layout_constraintHorizontal_bias="0.496"
+            app:layout_constraintStart_toStartOf="@+id/update_note_description_id"
+            app:layout_constraintTop_toBottomOf="@+id/update_note_description_id"
+            app:layout_constraintVertical_bias="0.541" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</layout>

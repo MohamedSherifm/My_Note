@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="notes"
+            type="com.example.mynote.database.Notes" />
+        <variable
+            name="clickListener"
+            type="com.example.mynote.notesScreen.NotesClickListener" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginRight="5dp"
+        android:background="@drawable/item_bg"
+        android:elevation="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        android:onClick="@{()->clickListener.onClick(notes)}">
+
+        <TextView
+            android:id="@+id/note_title_text_view_id"
+            android:layout_width="0dp"
+            android:layout_height="37dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:background="#7599be"
+            android:elevation="10dp"
+            android:fontFamily="@font/aclonica"
+            android:hint="Hello "
+            android:inputType="textCapSentences"
+            android:text="@{notes.noteTitle}"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="26sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/note_description_text_view_id"
+            android:layout_width="0dp"
+            android:layout_height="78dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            android:fontFamily="serif-monospace"
+            android:hint="Hello world its fine "
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            android:text="@{notes.noteDescription}"
+            android:textColor="#364547"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/note_title_text_view_id" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
